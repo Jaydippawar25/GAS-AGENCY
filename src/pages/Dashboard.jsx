@@ -28,7 +28,6 @@ import {
   ChevronRight, 
   ShieldAlert, 
   FileSpreadsheet,
-  Package,
   Plus,
   Layers,
   CheckCircle2,
@@ -143,7 +142,7 @@ const Dashboard = () => {
       {/* SECTION 1: TOP MAIN CONTENT & RIGHT SIDEBAR GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, 4 TOTAL INVENTORY OVERVIEW CARDS (8 COLS) */}
+        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, 3 TOTAL GAS OVERVIEW CARDS (8 COLS) */}
         <div className="lg:col-span-8 space-y-6">
           
           {/* 1. Official Gas Agency Navy & Red Welcome Banner */}
@@ -154,7 +153,7 @@ const Dashboard = () => {
               </span>
               <h2 className="text-2xl sm:text-3xl font-black tracking-tight">Hello, Gas Agency Admin!</h2>
               <p className="text-xs sm:text-sm font-medium text-slate-300 mt-1">
-                Welcome back to your HP, Indane & Bharat Gas Inventory System
+                Welcome back to your Gas Agency Inventory Portal
               </p>
             </div>
             
@@ -196,68 +195,69 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* 3. 4 Total Stock Overview Cards (Total Stock, Filled Gas, Empty Gas, Registered Customers) */}
+          {/* 3. TOTAL GAS STOCK CARDS (TOTAL GAS, FILLED GAS, EMPTY GAS) - NO COMPANY BREAKDOWN */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider">AGENCY INVENTORY OVERVIEW</h3>
-              <span className="text-xs font-bold text-[#1E3A5F]">Active Stock</span>
+              <h3 className="text-xs font-black text-[#1E3A5F] uppercase tracking-wider">TOTAL GAS INVENTORY OVERVIEW</h3>
+              <span className="text-xs font-bold text-[#15803D]">Active Stock Summary</span>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              {/* Card 1: Total Stock (Filled + Empty) */}
-              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
-                  <Layers className="w-5 h-5" />
+              {/* Card 1: Total Gas Stock (Filled + Empty Combined) */}
+              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
+                    <Layers className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+                    Combined
+                  </span>
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Total Stock</span>
-                  <h4 className="text-lg font-black text-gray-800">{totalCylinderStock} Cylinders</h4>
+                  <span className="text-xs font-bold text-gray-400 block uppercase tracking-wider">Total Gas Stock</span>
+                  <h4 className="text-2xl font-black text-gray-900 mt-1">{totalCylinderStock} Cylinders</h4>
                 </div>
-                <div className="bg-[#1E3A5F] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
-                  Filled + Empty
+                <div className="bg-[#1E3A5F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
+                  Filled ({totalFilled}) + Empty ({totalEmpty})
                 </div>
               </div>
 
               {/* Card 2: Filled Gas Stock */}
-              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#15803D] text-white flex items-center justify-center shadow-md">
-                  <CheckCircle2 className="w-5 h-5" />
+              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#15803D] text-white flex items-center justify-center shadow-md">
+                    <CheckCircle2 className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                    Available
+                  </span>
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Filled Gas Stock</span>
-                  <h4 className="text-lg font-black text-gray-800">{totalFilled} Cylinders</h4>
+                  <span className="text-xs font-bold text-gray-400 block uppercase tracking-wider">Filled Gas Stock</span>
+                  <h4 className="text-2xl font-black text-gray-900 mt-1">{totalFilled} Cylinders</h4>
                 </div>
-                <div className="bg-[#15803D] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
-                  Ready For Sale
+                <div className="bg-[#15803D] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
+                  Ready For Dispatch Sale
                 </div>
               </div>
 
               {/* Card 3: Empty Gas Stock */}
-              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center shadow-md">
-                  <RefreshCw className="w-5 h-5" />
+              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow">
+                <div className="flex items-center justify-between">
+                  <div className="w-12 h-12 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center shadow-md">
+                    <RefreshCw className="w-6 h-6" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-wider text-red-700 bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
+                    Collected
+                  </span>
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Empty Gas Stock</span>
-                  <h4 className="text-lg font-black text-gray-800">{totalEmpty} Cylinders</h4>
+                  <span className="text-xs font-bold text-gray-400 block uppercase tracking-wider">Empty Gas Stock</span>
+                  <h4 className="text-2xl font-black text-gray-900 mt-1">{totalEmpty} Cylinders</h4>
                 </div>
-                <div className="bg-[#D32F2F] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
-                  Awaiting Refill
-                </div>
-              </div>
-
-              {/* Card 4: Total Registered Customers */}
-              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
-                  <Users className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Total Customers</span>
-                  <h4 className="text-lg font-black text-gray-800">{customers.length} Registered</h4>
-                </div>
-                <div className="bg-[#1E3A5F] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
-                  {refillAvailableCount} Eligible
+                <div className="bg-[#D32F2F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
+                  Awaiting Bottling Refill
                 </div>
               </div>
 
