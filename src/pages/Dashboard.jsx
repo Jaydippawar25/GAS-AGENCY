@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import InventoryForm from '../components/inventory/InventoryForm';
-import { getAllInventory, addInventoryItem, updateInventoryStock } from '../services/inventoryService';
+import { getAllInventory, addInventoryItem } from '../services/inventoryService';
 import { getRecentSales } from '../services/salesService';
 import { getAllCustomers } from '../services/customerService';
 import { getMonthlySalesTrend, getAllSalesRecords } from '../services/reportService';
@@ -27,11 +27,12 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ShieldAlert, 
-  PackageCheck,
   FileSpreadsheet,
-  Building2,
   Package,
-  Plus
+  Plus,
+  Layers,
+  CheckCircle2,
+  RefreshCw
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -89,10 +90,7 @@ const Dashboard = () => {
     return <LoadingSpinner label="Loading gas agency dashboard..." size="lg" />;
   }
 
-  // Stock calculations per provider company
-  let hpFilled = 0;
-  let indaneFilled = 0;
-  let bharatFilled = 0;
+  // Stock calculations: Total Filled, Total Empty, Total Combined Stock
   let totalFilled = 0;
   let totalEmpty = 0;
 
@@ -101,11 +99,9 @@ const Dashboard = () => {
     const empty = Number(item.emptyQuantity || 0);
     totalFilled += filled;
     totalEmpty += empty;
-
-    if (item.company === 'HP Gas') hpFilled += filled;
-    if (item.company === 'Indane Gas') indaneFilled += filled;
-    if (item.company === 'Bharat Gas') bharatFilled += filled;
   });
+
+  const totalCylinderStock = totalFilled + totalEmpty;
 
   // Sales totals
   let totalRevenue = 0;
@@ -147,7 +143,7 @@ const Dashboard = () => {
       {/* SECTION 1: TOP MAIN CONTENT & RIGHT SIDEBAR GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, 4 PROVIDER CARDS (8 COLS) */}
+        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, 4 TOTAL INVENTORY OVERVIEW CARDS (8 COLS) */}
         <div className="lg:col-span-8 space-y-6">
           
           {/* 1. Official Gas Agency Navy & Red Welcome Banner */}
@@ -200,64 +196,58 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* 3. 4 Provider Category Cards */}
+          {/* 3. 4 Total Stock Overview Cards (Total Stock, Filled Gas, Empty Gas, Registered Customers) */}
           <div>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider">LPG Provider Stock Distribution</h3>
+              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider">AGENCY INVENTORY OVERVIEW</h3>
               <span className="text-xs font-bold text-[#1E3A5F]">Active Stock</span>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               
-              {/* HP Gas */}
+              {/* Card 1: Total Stock (Filled + Empty) */}
               <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#1D4ED8] text-white flex items-center justify-center shadow-md">
-                  <Building2 className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
+                  <Layers className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">HP Gas</span>
-                  <h4 className="text-lg font-black text-gray-800">{hpFilled} Cylinders</h4>
+                  <span className="text-[11px] font-bold text-gray-400 block">Total Stock</span>
+                  <h4 className="text-lg font-black text-gray-800">{totalCylinderStock} Cylinders</h4>
                 </div>
-                <div className={`text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm ${
-                  hpFilled > 20 ? 'bg-[#1D4ED8]' : 'bg-[#D32F2F]'
-                }`}>
-                  {hpFilled > 20 ? 'Stock Normal' : 'Low Stock'}
+                <div className="bg-[#1E3A5F] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
+                  Filled + Empty
                 </div>
               </div>
 
-              {/* Indane Gas */}
-              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center shadow-md">
-                  <Flame className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Indane Gas</span>
-                  <h4 className="text-lg font-black text-gray-800">{indaneFilled} Cylinders</h4>
-                </div>
-                <div className={`text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm ${
-                  indaneFilled > 20 ? 'bg-[#15803D]' : 'bg-[#D32F2F]'
-                }`}>
-                  {indaneFilled > 20 ? 'Stock Normal' : 'Low Stock'}
-                </div>
-              </div>
-
-              {/* Bharat Gas */}
+              {/* Card 2: Filled Gas Stock */}
               <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
                 <div className="w-10 h-10 rounded-2xl bg-[#15803D] text-white flex items-center justify-center shadow-md">
-                  <Package className="w-5 h-5" />
+                  <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold text-gray-400 block">Bharat Gas</span>
-                  <h4 className="text-lg font-black text-gray-800">{bharatFilled} Cylinders</h4>
+                  <span className="text-[11px] font-bold text-gray-400 block">Filled Gas Stock</span>
+                  <h4 className="text-lg font-black text-gray-800">{totalFilled} Cylinders</h4>
                 </div>
-                <div className={`text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm ${
-                  bharatFilled > 20 ? 'bg-[#15803D]' : 'bg-[#D32F2F]'
-                }`}>
-                  {bharatFilled > 20 ? 'Stock Normal' : 'Low Stock'}
+                <div className="bg-[#15803D] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
+                  Ready For Sale
                 </div>
               </div>
 
-              {/* Total Registered Customers */}
+              {/* Card 3: Empty Gas Stock */}
+              <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
+                <div className="w-10 h-10 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center shadow-md">
+                  <RefreshCw className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[11px] font-bold text-gray-400 block">Empty Gas Stock</span>
+                  <h4 className="text-lg font-black text-gray-800">{totalEmpty} Cylinders</h4>
+                </div>
+                <div className="bg-[#D32F2F] text-white text-center py-1.5 rounded-xl text-[11px] font-extrabold shadow-sm">
+                  Awaiting Refill
+                </div>
+              </div>
+
+              {/* Card 4: Total Registered Customers */}
               <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-3 hover:shadow-md transition-shadow">
                 <div className="w-10 h-10 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
                   <Users className="w-5 h-5" />
