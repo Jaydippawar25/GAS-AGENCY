@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#1E3A5F] text-[#1E293B] antialiased min-h-screen p-2 sm:p-3 md:p-4 flex items-center justify-center;
+    @apply bg-[#0F172A] text-[#1E293B] antialiased min-h-screen p-0 m-0 w-full flex flex-col justify-start items-center;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 }
