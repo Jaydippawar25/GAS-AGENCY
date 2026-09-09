@@ -64,9 +64,9 @@ const InventoryForm = ({ isOpen, onClose, item, mode = 'UPDATE_STOCK', onSubmit 
       } else {
         await onSubmit({
           mode: 'UPDATE_STOCK',
-          inventoryId: item.id,
-          company: item.company,
-          weight: item.weight,
+          inventoryId: item?.id,
+          company: item?.company,
+          weight: item?.weight,
           filledToAdd: Number(filledToAdd),
           emptyToAdd: Number(emptyToAdd),
           minimumStock: Number(minimumStock),
@@ -182,15 +182,15 @@ const InventoryForm = ({ isOpen, onClose, item, mode = 'UPDATE_STOCK', onSubmit 
             <div className="bg-slate-50 p-4 rounded-xl border border-slate-200 grid grid-cols-3 gap-2 text-center">
               <div>
                 <span className="text-[11px] text-gray-500 font-semibold uppercase block">Current Filled</span>
-                <span className="text-base font-bold text-emerald-700">{item.filledQuantity}</span>
+                <span className="text-base font-bold text-emerald-700">{item?.filledQuantity ?? 0}</span>
               </div>
               <div>
                 <span className="text-[11px] text-gray-500 font-semibold uppercase block">Current Empty</span>
-                <span className="text-base font-bold text-gray-700">{item.emptyQuantity}</span>
+                <span className="text-base font-bold text-gray-700">{item?.emptyQuantity ?? 0}</span>
               </div>
               <div>
                 <span className="text-[11px] text-gray-500 font-semibold uppercase block">Current Total</span>
-                <span className="text-base font-bold text-[#1E3A5F]">{(item.filledQuantity || 0) + (item.emptyQuantity || 0)}</span>
+                <span className="text-base font-bold text-[#1E3A5F]">{(item?.filledQuantity || 0) + (item?.emptyQuantity || 0)}</span>
               </div>
             </div>
 
