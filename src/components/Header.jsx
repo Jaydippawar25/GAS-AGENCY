@@ -32,25 +32,25 @@ const Header = ({ lowStockCount = 0 }) => {
   ];
 
   return (
-    <header className="bg-[#1E3A5F]/95 backdrop-blur-md text-white rounded-3xl px-4 py-3 mb-6 shadow-xl border border-white/10 sticky top-2 z-50 w-full overflow-visible transition-all duration-200 hover:shadow-2xl">
+    <header className="sticky top-0 z-50 w-full bg-[#1E3A5F] text-white px-4 sm:px-6 py-3 mb-6 shadow-xl border-b border-white/10 rounded-b-3xl md:rounded-3xl transition-all duration-200">
       
-      {/* Header Main Row */}
+      {/* Top Header Main Row */}
       <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
         
         {/* Brand Logo & Name */}
         <div className="flex items-center space-x-2.5 shrink-0">
           <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#D32F2F] to-[#EF4444] flex items-center justify-center text-white shadow-md shrink-0">
-            <Flame className="w-5 h-5 animate-pulse" />
+            <Flame className="w-5 h-5 animate-pulse text-amber-300" />
           </div>
           <div className="hidden sm:block">
-            <h1 className="text-sm font-extrabold tracking-wide text-white leading-tight">
+            <h1 className="text-sm font-black tracking-wide text-white leading-tight">
               GAS AGENCY
             </h1>
-            <p className="text-[9px] text-amber-300 font-semibold uppercase tracking-wider">Inventory Portal</p>
+            <p className="text-[9px] text-amber-300 font-extrabold uppercase tracking-wider">Inventory Portal</p>
           </div>
         </div>
 
-        {/* Desktop Top Navigation Tabs (Sticky Fixed + Hover Effects) */}
+        {/* Desktop Fixed Top Navigation Tabs */}
         <nav className="hidden lg:flex items-center bg-[#0F172A]/50 p-1 rounded-2xl border border-white/10 space-x-1 shrink-0">
           {navItems.map((item) => {
             const Icon = item.icon;
@@ -61,7 +61,7 @@ const Header = ({ lowStockCount = 0 }) => {
                 className={({ isActive }) =>
                   `flex items-center px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 hover:scale-105 ${
                     isActive
-                      ? 'bg-white text-[#1E3A5F] shadow-lg font-extrabold'
+                      ? 'bg-white text-[#1E3A5F] shadow-lg font-black'
                       : 'text-blue-100 hover:bg-white/20 hover:text-white font-semibold'
                   }`
                 }
@@ -164,7 +164,7 @@ const Header = ({ lowStockCount = 0 }) => {
                 className={({ isActive }) =>
                   `flex items-center px-3 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 hover:scale-105 ${
                     isActive
-                      ? 'bg-white text-[#1E3A5F] shadow-md font-extrabold'
+                      ? 'bg-white text-[#1E3A5F] shadow-md font-black'
                       : 'text-blue-100 hover:bg-white/20 hover:text-white'
                   }`
                 }
@@ -191,7 +191,7 @@ const Header = ({ lowStockCount = 0 }) => {
                   className={({ isActive }) =>
                     `flex items-center px-3.5 py-2.5 rounded-2xl text-xs font-bold transition-all ${
                       isActive
-                        ? 'bg-white text-[#1E3A5F] shadow-md font-extrabold'
+                        ? 'bg-white text-[#1E3A5F] shadow-md font-black'
                         : 'bg-white/10 text-blue-100 hover:bg-white/25'
                     }`
                   }
