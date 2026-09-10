@@ -26,7 +26,7 @@ const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-between">
+    <div className="w-full min-h-screen bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-between max-w-none">
       
       <div>
         {/* Top Header & Navigation Bar */}
@@ -54,8 +54,8 @@ const MainLayout = ({ children }) => {
           </div>
         )}
 
-        {/* 100% Full Width Page Content Canvas */}
-        <main className="w-full">
+        {/* 100% Full Width Edge-to-Edge Page Canvas */}
+        <main className="w-full max-w-none">
           {children}
         </main>
       </div>
