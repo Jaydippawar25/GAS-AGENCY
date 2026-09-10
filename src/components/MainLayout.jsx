@@ -26,7 +26,7 @@ const MainLayout = ({ children }) => {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-between overflow-x-hidden">
+    <div className="w-full min-h-screen bg-white p-4 sm:p-6 md:p-8 flex flex-col justify-between">
       
       <div>
         {/* Top Header & Navigation Bar */}

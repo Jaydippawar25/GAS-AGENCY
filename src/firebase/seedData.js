@@ -3,27 +3,27 @@ import { db } from './config';
 
 export const INITIAL_INVENTORY_ITEMS = [
   // HP Gas
-  { id: 'HP_2', company: 'HP Gas', companyCode: 'HP', weight: 2, filledQuantity: 120, emptyQuantity: 35, minimumStock: 15 },
-  { id: 'HP_5', company: 'HP Gas', companyCode: 'HP', weight: 5, filledQuantity: 180, emptyQuantity: 50, minimumStock: 15 },
-  { id: 'HP_14', company: 'HP Gas', companyCode: 'HP', weight: 14, filledQuantity: 580, emptyQuantity: 185, minimumStock: 25 },
-  { id: 'HP_19', company: 'HP Gas', companyCode: 'HP', weight: 19, filledQuantity: 95, emptyQuantity: 40, minimumStock: 10 },
-  { id: 'HP_47.5', company: 'HP Gas', companyCode: 'HP', weight: 47.5, filledQuantity: 30, emptyQuantity: 10, minimumStock: 5 },
+  { id: 'HP_2', company: 'HP Gas', companyCode: 'HP', weight: 2, filledQuantity: 85, emptyQuantity: 25, minimumStock: 15 },
+  { id: 'HP_5', company: 'HP Gas', companyCode: 'HP', weight: 5, filledQuantity: 120, emptyQuantity: 40, minimumStock: 15 },
+  { id: 'HP_14', company: 'HP Gas', companyCode: 'HP', weight: 14, filledQuantity: 298, emptyQuantity: 85, minimumStock: 25 },
+  { id: 'HP_19', company: 'HP Gas', companyCode: 'HP', weight: 19, filledQuantity: 65, emptyQuantity: 30, minimumStock: 10 },
+  { id: 'HP_47.5', company: 'HP Gas', companyCode: 'HP', weight: 47.5, filledQuantity: 20, emptyQuantity: 8, minimumStock: 5 },
   
   // Indane Gas
-  { id: 'INDANE_2', company: 'Indane Gas', companyCode: 'INDANE', weight: 2, filledQuantity: 110, emptyQuantity: 30, minimumStock: 15 },
-  { id: 'INDANE_5', company: 'Indane Gas', companyCode: 'INDANE', weight: 5, filledQuantity: 160, emptyQuantity: 45, minimumStock: 15 },
-  { id: 'INDANE_14', company: 'Indane Gas', companyCode: 'INDANE', weight: 14, filledQuantity: 540, emptyQuantity: 175, minimumStock: 30 },
-  { id: 'INDANE_19', company: 'Indane Gas', companyCode: 'INDANE', weight: 19, filledQuantity: 85, emptyQuantity: 32, minimumStock: 10 },
+  { id: 'INDANE_2', company: 'Indane Gas', companyCode: 'INDANE', weight: 2, filledQuantity: 70, emptyQuantity: 20, minimumStock: 15 },
+  { id: 'INDANE_5', company: 'Indane Gas', companyCode: 'INDANE', weight: 5, filledQuantity: 110, emptyQuantity: 35, minimumStock: 15 },
+  { id: 'INDANE_14', company: 'Indane Gas', companyCode: 'INDANE', weight: 14, filledQuantity: 340, emptyQuantity: 95, minimumStock: 30 },
+  { id: 'INDANE_19', company: 'Indane Gas', companyCode: 'INDANE', weight: 19, filledQuantity: 55, emptyQuantity: 22, minimumStock: 10 },
 
   // Bharat Gas
-  { id: 'BHARAT_2', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 2, filledQuantity: 90, emptyQuantity: 25, minimumStock: 15 },
-  { id: 'BHARAT_5', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 5, filledQuantity: 130, emptyQuantity: 38, minimumStock: 15 },
-  { id: 'BHARAT_14', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 14, filledQuantity: 328, emptyQuantity: 111, minimumStock: 25 },
-  { id: 'BHARAT_19', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 19, filledQuantity: 62, emptyQuantity: 22, minimumStock: 10 },
+  { id: 'BHARAT_2', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 2, filledQuantity: 60, emptyQuantity: 18, minimumStock: 15 },
+  { id: 'BHARAT_5', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 5, filledQuantity: 90, emptyQuantity: 28, minimumStock: 15 },
+  { id: 'BHARAT_14', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 14, filledQuantity: 157, emptyQuantity: 62, minimumStock: 25 },
+  { id: 'BHARAT_19', company: 'Bharat Gas', companyCode: 'BHARAT', weight: 19, filledQuantity: 42, emptyQuantity: 15, minimumStock: 10 },
 
   // Reliance Commercial Gas
-  { id: 'RELIANCE_19', company: 'Reliance Gas', companyCode: 'RELIANCE', weight: 19, filledQuantity: 80, emptyQuantity: 20, minimumStock: 10 },
-  { id: 'RELIANCE_33', company: 'Reliance Gas', companyCode: 'RELIANCE', weight: 33, filledQuantity: 40, emptyQuantity: 10, minimumStock: 5 }
+  { id: 'RELIANCE_19', company: 'Reliance Gas', companyCode: 'RELIANCE', weight: 19, filledQuantity: 38, emptyQuantity: 12, minimumStock: 10 },
+  { id: 'RELIANCE_33', company: 'Reliance Gas', companyCode: 'RELIANCE', weight: 33, filledQuantity: 18, emptyQuantity: 6, minimumStock: 5 }
 ];
 
 export const INITIAL_SETTINGS = {
@@ -43,11 +43,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9876543210',
     address: '12 Green Park Society, Kothrud, Pune',
     company: 'HP Gas',
-    totalPurchases: 14,
-    totalCylinders: 14,
+    totalPurchases: 8,
+    totalCylinders: 8,
     lastPurchaseDate: new Date(Date.now() - 32 * 24 * 60 * 60 * 1000), // 32 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 1, 10)
+    createdAt: new Date(2025, 1, 10)
   },
   {
     id: 'cust_2',
@@ -56,11 +56,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9812345678',
     address: 'B-402 Shanti Towers, Viman Nagar, Pune',
     company: 'Indane Gas',
-    totalPurchases: 9,
-    totalCylinders: 9,
+    totalPurchases: 5,
+    totalCylinders: 5,
     lastPurchaseDate: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000), // 8 days ago (INELIGIBLE)
     nextEligibleDate: new Date(Date.now() + 17 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 2, 15)
+    createdAt: new Date(2025, 2, 15)
   },
   {
     id: 'cust_3',
@@ -69,11 +69,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9765432109',
     address: '77 Shivaji Marg, Aundh, Pune',
     company: 'Bharat Gas',
-    totalPurchases: 18,
-    totalCylinders: 24,
+    totalPurchases: 12,
+    totalCylinders: 16,
     lastPurchaseDate: new Date(Date.now() - 45 * 24 * 60 * 60 * 1000), // 45 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2023, 11, 5)
+    createdAt: new Date(2024, 11, 5)
   },
   {
     id: 'cust_4',
@@ -82,11 +82,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9822334455',
     address: 'Flat 101, Omkar Heights, Baner, Pune',
     company: 'HP Gas',
-    totalPurchases: 6,
-    totalCylinders: 6,
+    totalPurchases: 4,
+    totalCylinders: 4,
     lastPurchaseDate: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000), // 60 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 3, 20)
+    createdAt: new Date(2025, 3, 20)
   },
   {
     id: 'cust_5',
@@ -95,11 +95,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9988776655',
     address: '24 Mayur Colony, Karve Nagar, Pune',
     company: 'Indane Gas',
-    totalPurchases: 11,
-    totalCylinders: 11,
+    totalPurchases: 7,
+    totalCylinders: 7,
     lastPurchaseDate: new Date(Date.now() - 12 * 24 * 60 * 60 * 1000), // 12 days ago (INELIGIBLE)
     nextEligibleDate: new Date(Date.now() + 13 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 0, 12)
+    createdAt: new Date(2025, 0, 12)
   },
   {
     id: 'cust_6',
@@ -108,8 +108,8 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9711223344',
     address: 'C-12 Sun City, Hadapsar, Pune',
     company: 'Bharat Gas',
-    totalPurchases: 5,
-    totalCylinders: 5,
+    totalPurchases: 2,
+    totalCylinders: 2,
     lastPurchaseDate: new Date(Date.now() - 28 * 24 * 60 * 60 * 1000), // 28 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000),
     createdAt: new Date(2025, 4, 1)
@@ -121,11 +121,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9655443322',
     address: '55 Lake View Residency, Katraj, Pune',
     company: 'HP Gas',
-    totalPurchases: 7,
-    totalCylinders: 7,
+    totalPurchases: 3,
+    totalCylinders: 3,
     lastPurchaseDate: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 days ago (INELIGIBLE)
     nextEligibleDate: new Date(Date.now() + 22 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 5, 14)
+    createdAt: new Date(2025, 5, 14)
   },
   {
     id: 'cust_8',
@@ -134,11 +134,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9899887766',
     address: 'Plot 88, IT Park Road, Hinjewadi, Pune',
     company: 'Indane Gas',
-    totalPurchases: 15,
-    totalCylinders: 15,
+    totalPurchases: 9,
+    totalCylinders: 9,
     lastPurchaseDate: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000), // 30 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2023, 10, 1)
+    createdAt: new Date(2024, 10, 1)
   },
   {
     id: 'cust_9',
@@ -147,11 +147,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9833445566',
     address: '15 Swapna Nagari, Pimpri, Pune',
     company: 'HP Gas',
-    totalPurchases: 8,
-    totalCylinders: 8,
+    totalPurchases: 6,
+    totalCylinders: 6,
     lastPurchaseDate: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000), // 35 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 6, 11)
+    createdAt: new Date(2025, 6, 11)
   },
   {
     id: 'cust_10',
@@ -160,11 +160,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9744556677',
     address: 'Chakan MIDC Phase 2, Pune',
     company: 'Reliance Gas',
-    totalPurchases: 22,
-    totalCylinders: 44,
+    totalPurchases: 14,
+    totalCylinders: 28,
     lastPurchaseDate: new Date(Date.now() - 40 * 24 * 60 * 60 * 1000), // 40 days ago (ELIGIBLE)
     nextEligibleDate: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2023, 8, 20)
+    createdAt: new Date(2024, 8, 20)
   },
   {
     id: 'cust_11',
@@ -173,11 +173,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9855667788',
     address: 'Flat 303, Rose Gardens, Wakad, Pune',
     company: 'Bharat Gas',
-    totalPurchases: 6,
-    totalCylinders: 6,
+    totalPurchases: 4,
+    totalCylinders: 4,
     lastPurchaseDate: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000), // 14 days ago (INELIGIBLE)
     nextEligibleDate: new Date(Date.now() + 11 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 7, 5)
+    createdAt: new Date(2025, 7, 5)
   },
   {
     id: 'cust_12',
@@ -186,37 +186,11 @@ export const INITIAL_CUSTOMERS = [
     mobile: '9966778899',
     address: '88 MG Road, Camp, Pune',
     company: 'Indane Gas',
-    totalPurchases: 16,
-    totalCylinders: 16,
-    lastPurchaseDate: new Date(Date.now() - 50 * 24 * 60 * 60 * 1000), // 50 days ago (ELIGIBLE)
-    nextEligibleDate: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2023, 5, 12)
-  },
-  {
-    id: 'cust_13',
-    name: 'Mahesh Pawar',
-    consumerId: 'HP77665',
-    mobile: '9822114433',
-    address: '14 Sai Smruti, Magarpatta, Pune',
-    company: 'HP Gas',
     totalPurchases: 10,
     totalCylinders: 10,
-    lastPurchaseDate: new Date(Date.now() - 29 * 24 * 60 * 60 * 1000),
-    nextEligibleDate: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 8, 1)
-  },
-  {
-    id: 'cust_14',
-    name: 'Suresh Jadhav',
-    consumerId: 'IND33445',
-    mobile: '9733221100',
-    address: '88 Green Meadows, Kalyani Nagar, Pune',
-    company: 'Indane Gas',
-    totalPurchases: 13,
-    totalCylinders: 13,
-    lastPurchaseDate: new Date(Date.now() - 31 * 24 * 60 * 60 * 1000),
-    nextEligibleDate: new Date(Date.now() - 6 * 24 * 60 * 60 * 1000),
-    createdAt: new Date(2024, 4, 18)
+    lastPurchaseDate: new Date(Date.now() - 50 * 24 * 60 * 60 * 1000), // 50 days ago (ELIGIBLE)
+    nextEligibleDate: new Date(Date.now() - 25 * 24 * 60 * 60 * 1000),
+    createdAt: new Date(2024, 5, 12)
   }
 ];
 
@@ -391,6 +365,21 @@ export const INITIAL_SALES = [
     saleDate: new Date(2026, 6, 18, 11, 20),
     nextEligibleDate: new Date(2026, 7, 12)
   },
+  {
+    id: 'sale_282',
+    customerId: 'cust_1',
+    customerName: 'Rahul Patil',
+    consumerId: 'HP12345',
+    mobile: '9876543210',
+    company: 'HP Gas',
+    weight: 14,
+    quantity: 1,
+    unitPrice: 950,
+    totalPrice: 950,
+    paymentMethod: 'UPI',
+    saleDate: new Date(2026, 6, 12, 14, 0),
+    nextEligibleDate: new Date(2026, 7, 6)
+  },
 
   // June 2026
   {
@@ -422,6 +411,91 @@ export const INITIAL_SALES = [
     paymentMethod: 'Card',
     saleDate: new Date(2026, 5, 5, 11, 45),
     nextEligibleDate: new Date(2026, 5, 30)
+  },
+
+  // May 2026
+  {
+    id: 'sale_260',
+    customerId: 'cust_2',
+    customerName: 'Priya Sharma',
+    consumerId: 'IND98765',
+    mobile: '9812345678',
+    company: 'Indane Gas',
+    weight: 14,
+    quantity: 1,
+    unitPrice: 950,
+    totalPrice: 950,
+    paymentMethod: 'UPI',
+    saleDate: new Date(2026, 4, 22, 13, 10),
+    nextEligibleDate: new Date(2026, 5, 16)
+  },
+
+  // April 2026
+  {
+    id: 'sale_250',
+    customerId: 'cust_5',
+    customerName: 'Rajesh Kulkarni',
+    consumerId: 'IND55443',
+    mobile: '9988776655',
+    company: 'Indane Gas',
+    weight: 14,
+    quantity: 1,
+    unitPrice: 950,
+    totalPrice: 950,
+    paymentMethod: 'Cash',
+    saleDate: new Date(2026, 3, 15, 10, 30),
+    nextEligibleDate: new Date(2026, 4, 10)
+  },
+
+  // March 2026
+  {
+    id: 'sale_240',
+    customerId: 'cust_3',
+    customerName: 'Amit Deshmukh',
+    consumerId: 'BH77889',
+    mobile: '9765432109',
+    company: 'Bharat Gas',
+    weight: 19,
+    quantity: 1,
+    unitPrice: 1850,
+    totalPrice: 1850,
+    paymentMethod: 'UPI',
+    saleDate: new Date(2026, 2, 29, 16, 0),
+    nextEligibleDate: new Date(2026, 3, 23)
+  },
+
+  // February 2026
+  {
+    id: 'sale_230',
+    customerId: 'cust_1',
+    customerName: 'Rahul Patil',
+    consumerId: 'HP12345',
+    mobile: '9876543210',
+    company: 'HP Gas',
+    weight: 14,
+    quantity: 1,
+    unitPrice: 950,
+    totalPrice: 950,
+    paymentMethod: 'Cash',
+    saleDate: new Date(2026, 1, 14, 11, 0),
+    nextEligibleDate: new Date(2026, 2, 11)
+  },
+
+  // January 2026
+  {
+    id: 'sale_220',
+    customerId: 'cust_8',
+    customerName: 'Sneha Mehta',
+    consumerId: 'IND11223',
+    mobile: '9899887766',
+    company: 'Indane Gas',
+    weight: 14,
+    quantity: 1,
+    unitPrice: 950,
+    totalPrice: 950,
+    paymentMethod: 'UPI',
+    saleDate: new Date(2026, 0, 8, 15, 30),
+    nextEligibleDate: new Date(2026, 1, 2)
   }
 ];
 
@@ -431,11 +505,11 @@ export const INITIAL_TRANSACTIONS = [
     company: 'HP Gas',
     weight: 14,
     transactionType: 'STOCK_IN',
-    quantity: 250,
-    previousFilled: 330,
-    newFilled: 580,
-    previousEmpty: 185,
-    newEmpty: 185,
+    quantity: 150,
+    previousFilled: 148,
+    newFilled: 298,
+    previousEmpty: 85,
+    newEmpty: 85,
     notes: 'Received bulk shipment from HP Bottling Plant #HP-4490',
     createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000)
   },
@@ -444,11 +518,11 @@ export const INITIAL_TRANSACTIONS = [
     company: 'Indane Gas',
     weight: 14,
     transactionType: 'STOCK_IN',
-    quantity: 200,
-    previousFilled: 340,
-    newFilled: 540,
-    previousEmpty: 175,
-    newEmpty: 175,
+    quantity: 180,
+    previousFilled: 160,
+    newFilled: 340,
+    previousEmpty: 95,
+    newEmpty: 95,
     notes: 'Received Indane bottling batch #IND-8820',
     createdAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000)
   },
@@ -458,10 +532,10 @@ export const INITIAL_TRANSACTIONS = [
     weight: 19,
     transactionType: 'SALE',
     quantity: 2,
-    previousFilled: 82,
-    newFilled: 80,
-    previousEmpty: 18,
-    newEmpty: 20,
+    previousFilled: 40,
+    newFilled: 38,
+    previousEmpty: 10,
+    newEmpty: 12,
     notes: 'Commercial sale to Deepak More (REL12345)',
     createdAt: new Date(Date.now() - 4 * 60 * 60 * 1000)
   },
@@ -470,11 +544,11 @@ export const INITIAL_TRANSACTIONS = [
     company: 'Bharat Gas',
     weight: 14,
     transactionType: 'RETURN',
-    quantity: 25,
-    previousFilled: 303,
-    newFilled: 328,
-    previousEmpty: 136,
-    newEmpty: 111,
+    quantity: 15,
+    previousFilled: 142,
+    newFilled: 157,
+    previousEmpty: 77,
+    newEmpty: 62,
     notes: 'Customer empty cylinder return batch',
     createdAt: new Date(Date.now() - 6 * 60 * 60 * 1000)
   }
