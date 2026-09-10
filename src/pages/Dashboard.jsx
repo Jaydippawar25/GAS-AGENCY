@@ -31,8 +31,7 @@ import {
   Plus,
   Layers,
   CheckCircle2,
-  RefreshCw,
-  Package
+  RefreshCw
 } from 'lucide-react';
 
 const Dashboard = () => {
@@ -196,7 +195,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* 3. UNIFIED COLOR SCHEME: 3 TOTAL GAS OVERVIEW CARDS (UNIFIED NAVY THEME) */}
+          {/* 3. UNIFIED COLOR SCHEME: 3 TOTAL GAS OVERVIEW CARDS (EXACT SAME SINGLE COLOR) */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-xs font-black text-[#1E3A5F] uppercase tracking-wider">TOTAL GAS INVENTORY OVERVIEW</h3>
@@ -205,7 +204,7 @@ const Dashboard = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              {/* Card 1: Total Gas Stock (Unified Navy Theme) */}
+              {/* Card 1: Total Gas Stock (Unified Single Navy Color) */}
               <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
@@ -224,7 +223,7 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {/* Card 2: Filled Gas Stock (Unified Navy Theme) */}
+              {/* Card 2: Filled Gas Stock (Unified Single Navy Color) */}
               <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
@@ -243,7 +242,7 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {/* Card 3: Empty Gas Stock (Unified Navy Theme) */}
+              {/* Card 3: Empty Gas Stock (Unified Single Navy Color) */}
               <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
@@ -267,7 +266,7 @@ const Dashboard = () => {
 
         </div>
 
-        {/* RIGHT COLUMN: QUICK FUNCTIONS & DISPATCH CHART (UNIFIED SINGLE COLOR THEME) */}
+        {/* RIGHT COLUMN: QUICK FUNCTIONS (ALL 4 BOXES HAVE EXACTLY THE SAME SINGLE COLOR) */}
         <div className="lg:col-span-4 bg-[#F8FAFC] rounded-3xl p-6 border border-slate-200 flex flex-col justify-between space-y-6">
           
           <div>
@@ -282,61 +281,61 @@ const Dashboard = () => {
               </button>
             </div>
             
-            {/* Quick Functions Grid (UNIFIED NAVY COLOR SCHEME FOR ALL TILES) */}
+            {/* Quick Functions Grid (ALL 4 BOXES USE THE EXACT SAME SINGLE COLOR #1E3A5F) */}
             <div className="grid grid-cols-2 gap-3">
               
-              {/* Sell Gas (Unified Navy Tile) */}
+              {/* Box 1: Sell Gas (Single Theme Color) */}
               <NavLink
                 to="/sales"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
               >
                 <div className="flex justify-between items-center">
-                  <ShoppingCart className="w-5 h-5 text-amber-300" />
-                  <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
+                  <ShoppingCart className="w-5 h-5 text-white" />
+                  <span className="w-2 h-2 rounded-full bg-white/60" />
                 </div>
-                <span className="text-xs font-black leading-tight">Sell Gas Cylinder</span>
+                <span className="text-xs font-black leading-tight text-white">Sell Gas Cylinder</span>
               </NavLink>
 
-              {/* Add New Gas (Unified Navy Tile) */}
+              {/* Box 2: Add New Gas (Single Theme Color) */}
               <button
                 onClick={() => setIsAddGasModalOpen(true)}
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 text-left border border-white/10"
               >
                 <div className="flex justify-between items-center">
-                  <PlusCircle className="w-5 h-5 text-amber-300" />
-                  <span className="w-2 h-2 rounded-full bg-amber-300" />
+                  <PlusCircle className="w-5 h-5 text-white" />
+                  <span className="w-2 h-2 rounded-full bg-white/60" />
                 </div>
-                <span className="text-xs font-black leading-tight">+ Add New Gas</span>
+                <span className="text-xs font-black leading-tight text-white">+ Add New Gas</span>
               </button>
 
-              {/* Customers (Unified Navy Tile) */}
+              {/* Box 3: Customers (Single Theme Color) */}
               <NavLink
                 to="/customers"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
               >
                 <div className="flex justify-between items-center">
-                  <Users className="w-5 h-5 text-amber-300" />
-                  <span className="w-2 h-2 rounded-full bg-white/40" />
+                  <Users className="w-5 h-5 text-white" />
+                  <span className="w-2 h-2 rounded-full bg-white/60" />
                 </div>
-                <span className="text-xs font-black leading-tight">Customers</span>
+                <span className="text-xs font-black leading-tight text-white">Customers</span>
               </NavLink>
 
-              {/* Export Reports (Unified Navy Tile) */}
+              {/* Box 4: Export Reports (Single Theme Color) */}
               <NavLink
                 to="/reports"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
               >
                 <div className="flex justify-between items-center">
-                  <FileSpreadsheet className="w-5 h-5 text-amber-300" />
-                  <span className="w-2 h-2 rounded-full bg-white/40" />
+                  <FileSpreadsheet className="w-5 h-5 text-white" />
+                  <span className="w-2 h-2 rounded-full bg-white/60" />
                 </div>
-                <span className="text-xs font-black leading-tight">Export Reports</span>
+                <span className="text-xs font-black leading-tight text-white">Export Reports</span>
               </NavLink>
 
             </div>
           </div>
 
-          {/* Recharts Weekly Dispatches Bar Chart (Unified Navy Bars) */}
+          {/* Recharts Weekly Dispatches Bar Chart */}
           <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
             <div className="flex justify-between items-center mb-2">
               <span className="text-xs font-bold text-gray-700">Weekly Cylinder Dispatches</span>
