@@ -142,10 +142,10 @@ const Dashboard = () => {
       {/* SECTION 1: TOP MAIN CONTENT & RIGHT SIDEBAR GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, UNIFIED STOCK CARDS (8 COLS) */}
+        {/* LEFT COLUMN: HERO BANNER, DATE SELECTOR, 3 TOTAL STOCK OVERVIEW CARDS (8 COLS) */}
         <div className="lg:col-span-8 space-y-6">
           
-          {/* 1. Official Gas Agency Unified Navy Welcome Banner */}
+          {/* 1. Official Gas Agency Navy Welcome Banner */}
           <div className="bg-[#1E3A5F] rounded-3xl p-6 sm:p-8 text-white shadow-xl flex items-center justify-between relative overflow-hidden border border-slate-700/50">
             <div className="z-10">
               <span className="text-xs font-bold text-amber-300 uppercase tracking-widest block mb-1">
@@ -195,27 +195,27 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* 3. UNIFIED COLOR SCHEME: 3 TOTAL GAS OVERVIEW CARDS (EXACT SAME SINGLE COLOR) */}
+          {/* 3. OVERVIEW CARDS: FILLED GAS = GREEN, EMPTY GAS = RED, TOTAL GAS = NAVY */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-xs font-black text-[#1E3A5F] uppercase tracking-wider">TOTAL GAS INVENTORY OVERVIEW</h3>
-              <span className="text-xs font-bold text-[#1E3A5F]">Active Stock Summary</span>
+              <span className="text-xs font-bold text-[#15803D]">Active Stock Summary</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
-              {/* Card 1: Total Gas Stock (Unified Single Navy Color) */}
+              {/* Card 1: Total Gas Stock (Navy Theme) */}
               <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
                 <div className="flex items-center justify-between">
                   <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
                     <Layers className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black uppercase tracking-wider text-[#1E3A5F] bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
-                    Combined
+                    COMBINED
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Total Gas Stock</span>
+                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">TOTAL GAS STOCK</span>
                   <h4 className="text-2xl font-black text-[#1E3A5F] mt-1">{totalCylinderStock} Cylinders</h4>
                 </div>
                 <div className="bg-[#1E3A5F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
@@ -223,40 +223,40 @@ const Dashboard = () => {
                 </div>
               </div>
 
-              {/* Card 2: Filled Gas Stock (Unified Single Navy Color) */}
-              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
+              {/* Card 2: Filled Gas Stock (EMERALD GREEN THEME) */}
+              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#15803D]">
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
+                  <div className="w-11 h-11 rounded-2xl bg-[#15803D] text-white flex items-center justify-center shadow-md">
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#1E3A5F] bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
-                    Available
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#15803D] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                    AVAILABLE
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Filled Gas Stock</span>
-                  <h4 className="text-2xl font-black text-[#1E3A5F] mt-1">{totalFilled} Cylinders</h4>
+                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">FILLED GAS STOCK</span>
+                  <h4 className="text-2xl font-black text-[#15803D] mt-1">{totalFilled} Cylinders</h4>
                 </div>
-                <div className="bg-[#1E3A5F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
+                <div className="bg-[#15803D] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
                   Ready For Dispatch Sale
                 </div>
               </div>
 
-              {/* Card 3: Empty Gas Stock (Unified Single Navy Color) */}
-              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#1E3A5F]">
+              {/* Card 3: Empty Gas Stock (FLAME RED THEME) */}
+              <div className="bg-white p-5 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4 hover:shadow-md transition-all border-t-4 border-t-[#D32F2F]">
                 <div className="flex items-center justify-between">
-                  <div className="w-11 h-11 rounded-2xl bg-[#1E3A5F] text-white flex items-center justify-center shadow-md">
+                  <div className="w-11 h-11 rounded-2xl bg-[#D32F2F] text-white flex items-center justify-center shadow-md">
                     <RefreshCw className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#1E3A5F] bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
-                    Collected
+                  <span className="text-[10px] font-black uppercase tracking-wider text-[#D32F2F] bg-red-50 px-2.5 py-1 rounded-full border border-red-200">
+                    COLLECTED
                   </span>
                 </div>
                 <div>
-                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">Empty Gas Stock</span>
-                  <h4 className="text-2xl font-black text-[#1E3A5F] mt-1">{totalEmpty} Cylinders</h4>
+                  <span className="text-xs font-bold text-slate-400 block uppercase tracking-wider">EMPTY GAS STOCK</span>
+                  <h4 className="text-2xl font-black text-[#D32F2F] mt-1">{totalEmpty} Cylinders</h4>
                 </div>
-                <div className="bg-[#1E3A5F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
+                <div className="bg-[#D32F2F] text-white text-center py-2 rounded-xl text-xs font-extrabold shadow-sm">
                   Awaiting Bottling Refill
                 </div>
               </div>
@@ -266,7 +266,7 @@ const Dashboard = () => {
 
         </div>
 
-        {/* RIGHT COLUMN: QUICK FUNCTIONS (ALL 4 BOXES HAVE EXACTLY THE SAME SINGLE COLOR) */}
+        {/* RIGHT COLUMN: QUICK FUNCTIONS (4 SINGLE-COLOR BOXES) & DISPATCH CHART */}
         <div className="lg:col-span-4 bg-[#F8FAFC] rounded-3xl p-6 border border-slate-200 flex flex-col justify-between space-y-6">
           
           <div>
@@ -281,10 +281,10 @@ const Dashboard = () => {
               </button>
             </div>
             
-            {/* Quick Functions Grid (ALL 4 BOXES USE THE EXACT SAME SINGLE COLOR #1E3A5F) */}
+            {/* Quick Functions Grid (SINGLE COLOR #1E3A5F) */}
             <div className="grid grid-cols-2 gap-3">
               
-              {/* Box 1: Sell Gas (Single Theme Color) */}
+              {/* Box 1: Sell Gas */}
               <NavLink
                 to="/sales"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
@@ -296,7 +296,7 @@ const Dashboard = () => {
                 <span className="text-xs font-black leading-tight text-white">Sell Gas Cylinder</span>
               </NavLink>
 
-              {/* Box 2: Add New Gas (Single Theme Color) */}
+              {/* Box 2: Add New Gas */}
               <button
                 onClick={() => setIsAddGasModalOpen(true)}
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 text-left border border-white/10"
@@ -308,7 +308,7 @@ const Dashboard = () => {
                 <span className="text-xs font-black leading-tight text-white">+ Add New Gas</span>
               </button>
 
-              {/* Box 3: Customers (Single Theme Color) */}
+              {/* Box 3: Customers */}
               <NavLink
                 to="/customers"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
@@ -320,7 +320,7 @@ const Dashboard = () => {
                 <span className="text-xs font-black leading-tight text-white">Customers</span>
               </NavLink>
 
-              {/* Box 4: Export Reports (Single Theme Color) */}
+              {/* Box 4: Export Reports */}
               <NavLink
                 to="/reports"
                 className="bg-[#1E3A5F] text-white p-4 rounded-2xl shadow-md hover:bg-[#244570] hover:scale-105 transition-all flex flex-col justify-between h-24 border border-white/10"
@@ -391,7 +391,7 @@ const Dashboard = () => {
                     <td className="py-3 px-3 font-medium text-gray-600">{s.company}</td>
                     <td className="py-3 px-3 font-semibold">{s.weight} KG</td>
                     <td className="py-3 px-3 font-bold">{s.quantity}</td>
-                    <td className="py-3 px-3 font-extrabold text-[#1E3A5F]">{formatCurrency(s.totalPrice)}</td>
+                    <td className="py-3 px-3 font-extrabold text-[#15803D]">{formatCurrency(s.totalPrice)}</td>
                     <td className="py-3 px-3 text-gray-400">{formatDate(s.saleDate)}</td>
                   </tr>
                 ))}
