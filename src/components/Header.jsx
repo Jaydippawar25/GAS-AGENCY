@@ -32,7 +32,7 @@ const Header = ({ lowStockCount = 0 }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#1E3A5F] text-white px-4 sm:px-6 py-3 mb-6 shadow-xl border-b border-white/10 rounded-b-3xl md:rounded-3xl transition-all duration-200">
+    <header className="relative z-40 w-full bg-[#1E3A5F] text-white px-4 sm:px-6 py-3.5 mb-6 shadow-xl border border-white/10 rounded-3xl transition-all duration-200">
       
       {/* Top Header Main Row */}
       <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
@@ -50,7 +50,7 @@ const Header = ({ lowStockCount = 0 }) => {
           </div>
         </div>
 
-        {/* Desktop Fixed Top Navigation Tabs */}
+        {/* Desktop Top Navigation Tabs (Scrolls naturally with page) */}
         <nav className="hidden lg:flex items-center bg-[#0F172A]/50 p-1 rounded-2xl border border-white/10 space-x-1 shrink-0">
           {navItems.map((item) => {
             const Icon = item.icon;
